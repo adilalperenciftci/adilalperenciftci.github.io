@@ -24,7 +24,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v7
       - name: Verify static site
-        run: node tests/site.test.mjs
+        run: node tests/site.test.mjs && node --test tests/motion.test.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v6
       - name: Upload site artifact

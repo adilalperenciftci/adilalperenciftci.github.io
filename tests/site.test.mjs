@@ -8,6 +8,7 @@ const requiredFiles = [
   "index.html",
   "styles.css",
   "app.js",
+  "motion.js",
   "404.html",
   "robots.txt",
   "sitemap.xml",
