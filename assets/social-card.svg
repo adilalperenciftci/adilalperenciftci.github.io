@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Adil Alperen Ciftci, systems security engineer">
+  <defs>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0v64" fill="none" stroke="#334155" stroke-opacity=".22"/>
+    </pattern>
+    <radialGradient id="glow" cx="70%" cy="20%" r="70%">
+      <stop offset="0" stop-color="#35d3eb" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#070a10" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#070a10"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="80" y="74" width="74" height="74" rx="14" fill="#0e1b25" stroke="#35d3eb" stroke-opacity=".55"/>
+  <text x="117" y="121" fill="#35d3eb" font-family="monospace" font-size="25" font-weight="700" text-anchor="middle">AC</text>
+  <text x="80" y="242" fill="#f7b955" font-family="monospace" font-size="20" letter-spacing="4">SYSTEMS SECURITY / UPSTREAM ENGINEERING</text>
+  <text x="80" y="335" fill="#e5edf6" font-family="Arial, sans-serif" font-size="64" font-weight="700">Adil Alperen Ciftci</text>
+  <text x="80" y="410" fill="#9aa8b9" font-family="Arial, sans-serif" font-size="30">Runtime boundaries. Workload identity. Protocol invariants.</text>
+  <path d="M80 492h720" stroke="#35d3eb" stroke-opacity=".35"/>
+  <text x="80" y="542" fill="#70e1a1" font-family="monospace" font-size="21">before-fail -&gt; surgical-patch -&gt; after-pass</text>
+  <g transform="translate(918 168)" fill="none" stroke-width="2">
+    <circle cx="80" cy="80" r="78" stroke="#35d3eb" stroke-opacity=".36"/>
+    <circle cx="80" cy="80" r="52" stroke="#f7b955" stroke-opacity=".44"/>
+    <circle cx="80" cy="80" r="22" stroke="#70e1a1" stroke-opacity=".68"/>
+    <path d="M80 0v160M0 80h160" stroke="#64748b" stroke-opacity=".25"/>
+  </g>
+</svg>

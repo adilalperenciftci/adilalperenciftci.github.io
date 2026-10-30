@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Adil Alperen Ciftci is an independent systems security engineer working on runtime boundaries, workload identity, cryptographic protocols, and upstream infrastructure."
+    >
+    <meta name="theme-color" content="#070a10">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Adil Alperen Ciftci - Systems Security Engineer">
+    <meta
+      property="og:description"
+      content="Runtime security, workload identity, cryptographic protocols, and upstream engineering."
+    >
+    <meta property="og:url" content="https://adilalperenciftci.github.io/">
+    <meta property="og:image" content="https://adilalperenciftci.github.io/assets/social-card.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://adilalperenciftci.github.io/">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+    <title>Adil Alperen Ciftci - Systems Security Engineer</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Adil Alperen Ciftci, home">
+        <span class="brand-mark" aria-hidden="true">AC</span>
+        <span class="brand-copy">
+          <strong>ADIL ALPEREN CIFTCI</strong>
+          <small>systems.security</small>
+        </span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#research">Research</a>
+        <a href="#upstream">Upstream</a>
+        <a href="#labs">Labs</a>
+        <a href="#identity">Identity</a>
+      </nav>
+      <a class="header-contact" href="#contact">Contact <span aria-hidden="true">-&gt;</span></a>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> Independent systems security engineering</p>
+          <h1 id="hero-title">Trust boundaries that survive contact with production.</h1>
+          <p class="hero-lede">
+            I work across kernel telemetry, workload identity, protocol state machines, and open-source control planes. The goal is simple: make every security-relevant transition explicit, bounded, and testable.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#upstream">Inspect upstream patches</a>
+            <a class="button button-secondary" href="#research">Open research map</a>
+          </div>
+          <ul class="hero-facts">
+            <li><span>01</span> Reproduce before patching</li>
+            <li><span>02</span> Preserve protocol invariants</li>
+            <li><span>03</span> Verify the failure boundary</li>
+          </ul>
+        </div>
+
+        <aside class="hero-console" aria-label="Current engineering scope">
+          <div class="console-bar">
+            <span></span><span></span><span></span>
+            <p>boundary-report.sh</p>
+          </div>
+          <div class="console-body">
+            <p><span class="console-prefix">$</span> scope inspect --current</p>
+            <dl>
+              <div><dt>runtime</dt><dd>eBPF / sandboxing</dd></div>
+              <div><dt>identity</dt><dd>SPIFFE / X.509 / Kerberos</dd></div>
+              <div><dt>protocols</dt><dd>WAF / CoAP / TLS / DNS</dd></div>
+              <div><dt>method</dt><dd>before-fail -&gt; after-pass</dd></div>
+            </dl>
+            <p class="console-ok">[verified] evidence chain complete</p>
+          </div>
+          <div class="boundary-diagram" aria-hidden="true">
+            <div class="diagram-node node-source">event</div>
+            <div class="diagram-line line-one"></div>
+            <div class="diagram-node node-policy">policy</div>
+            <div class="diagram-line line-two"></div>
+            <div class="diagram-node node-state">state</div>
+            <div class="diagram-line line-three"></div>
+            <div class="diagram-node node-proof">proof</div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="signal-strip" aria-label="Selected engineering signals">
+        <div><strong>8</strong><span>verified upstream merges highlighted</span></div>
+        <div><strong>4</strong><span>core trust-boundary domains</span></div>
+        <div><strong>VM</strong><span>isolated verification environment</span></div>
+        <div><strong>DCO</strong><span>traceable contribution history</span></div>
+      </section>
+
+      <section id="research" class="section research-section" aria-labelledby="research-title">
+        <div class="section-heading reveal">
+          <p class="section-index">01 / RESEARCH AREAS</p>
+          <h2 id="research-title">Security properties as system contracts.</h2>
+          <p>Each track starts from a concrete trust boundary and ends with an observable verification condition.</p>
+        </div>
+
+        <div class="research-grid">
+          <article class="research-card reveal">
+            <div class="card-number">R-01</div>
+            <div class="card-icon" aria-hidden="true">{ }</div>
+            <h3>Runtime security</h3>
+            <p>Confinement, capability reduction, descriptor ownership, and deterministic cleanup across process and hypervisor boundaries.</p>
+            <ul><li>Kata Containers</li><li>Capsicum</li><li>Linux namespaces</li></ul>
+          </article>
+          <article class="research-card reveal">
+            <div class="card-number">R-02</div>
+            <div class="card-icon" aria-hidden="true">&lt;/&gt;</div>
+            <h3>eBPF telemetry</h3>
+            <p>cgroup-scoped execution evidence, datapath state machines, conntrack contracts, and evidence-loss handling.</p>
+            <ul><li>Cilium</li><li>Falco</li><li>Kernel observability</li></ul>
+          </article>
+          <article class="research-card reveal">
+            <div class="card-number">R-03</div>
+            <div class="card-icon" aria-hidden="true">[::]</div>
+            <h3>Hypervisor confinement</h3>
+            <p>Guest-host interfaces, workload byte preservation, lifecycle ordering, and bounded execution surfaces.</p>
+            <ul><li>MicroVM runtimes</li><li>Guest policy</li><li>Resource isolation</li></ul>
+          </article>
+          <article class="research-card reveal">
+            <div class="card-number">R-04</div>
+            <div class="card-icon" aria-hidden="true">0x</div>
+            <h3>Cryptographic protocols</h3>
+            <p>RFC 5280 path constraints, SPIFFE identity, PKINIT and Kerberos boundaries, authenticated transport metadata.</p>
+            <ul><li>SPIRE</li><li>X.509</li><li>AD/Kerberos</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="upstream" class="section upstream-section" aria-labelledby="upstream-title">
+        <div class="section-heading reveal">
+          <p class="section-index">02 / UPSTREAM PATCH INDEX</p>
+          <h2 id="upstream-title">Small patches. Explicit invariants.</h2>
+          <p>Verified merges and current reviews across runtime, identity, protocol, and platform boundaries.</p>
+        </div>
+
+        <div class="filter-bar reveal" role="group" aria-label="Filter upstream patches">
+          <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-button" type="button" data-filter="runtime" aria-pressed="false">Runtime</button>
+          <button class="filter-button" type="button" data-filter="identity" aria-pressed="false">Identity</button>
+          <button class="filter-button" type="button" data-filter="protocol" aria-pressed="false">Protocol</button>
+          <button class="filter-button" type="button" data-filter="platform" aria-pressed="false">Platform</button>
+          <p class="result-count" aria-live="polite"><span id="visible-count">14</span> patches shown</p>
+        </div>
+
+        <div class="project-grid" id="project-grid">
+          <article class="project-card reveal" data-category="runtime">
+            <div class="project-top"><span class="project-status merged">Merged</span><span class="project-code">CILIUM / 49130</span></div>
+            <h3>GRPCRoute backend TLS policy</h3>
+            <p>Extended Gateway API backend transport validation so GRPC routing follows the same authenticated upstream contract.</p>
+            <div class="project-tags"><span>Go</span><span>Gateway API</span><span>TLS</span></div>
+            <a href="https://github.com/cilium/cilium/pull/49130" target="_blank" rel="noopener noreferrer">View merged patch <span aria-hidden="true">-&gt;</span></a>
+          </article>
+
+          <article class="project-card reveal" data-category="runtime">
+            <div class="project-top"><span class="project-status merged">Merged</span><span class="project-code">FALCO / 3112</span></div>
+            <h3>Plugin extraction error propagation</h3>
+            <p>Kept field-extraction failures visible across the libsinsp plugin boundary instead of collapsing the diagnostic state.</p>
+            <div class="project-tags"><span>C++</span><span>libsinsp</span><span>Telemetry</span></div>
+            <a href="https://github.com/falcosecurity/libs/pull/3112" target="_blank" rel="noopener noreferrer">View merged patch <span aria-hidden="true">-&gt;</span></a>
+          </article>
+
+          <article class="project-card reveal" data-category="identity">
+            <div class="project-top"><span class="project-status merged">Merged</span><span class="project-code">SPIRE / 7303</span></div>
+            <h3>Upstream CA expiry contract</h3>
+            <p>Bound CA rotation and issued SVID lifetimes to the verified upstream X.509 chain expiry.</p>
+            <div class="project-tags"><span>Go</span><span>SPIFFE</span><span>RFC 5280</span></div>
+            <a href="https://github.com/spiffe/spire/pull/7303" target="_blank" rel="noopener noreferrer">View merged patch <span aria-hidden="true">-&gt;</span></a>
+          </article>
+
+          <article class="project-card reveal" data-category="identity">
+            <div class="project-top"><span class="project-status merged">Merged</span><span class="project-code">IMPACKET / 2304</span></div>
+            <h3>Bounded DNS compression traversal</h3>
+            <p>Stopped compressed-name pointer cycles with explicit traversal bounds while preserving valid nested labels.</p>
+            <div class="project-tags"><span>Python</span><span>DNS</span><span>AD tooling</span></div>
+            <a href="https://github.com/fortra/impacket/pull/2304" target="_blank" rel="noopener noreferrer">View merged patch <span aria-hidden="true">-&gt;</span></a>
+          </article>
+
+          <article class="project-card reveal" data-category="platform">
+            <div class="project-top"><span class="project-status merged">Merged</span><span class="project-code">DEFECTDOJO / 15961</span></div>
+            <h3>Product-member finding visibility</h3>
+            <p>Aligned finding-group list visibility with product authorization, including groups without findings.</p>
+            <div class="project-tags"><span>Python</span><span>Django</span><span>Authorization</span></div>
+            <a href="https://github.com/DefectDojo/django-DefectDojo/pull/15961" target="_blank" rel="noopener noreferrer">View merged patch <span aria-hidden="true">-&gt;</span></a>
+          </article>
+
+          <article class="project-card reveal" data-category="platform">
+            <div class="project-top"><span class="project-status merged">Merged</span><span class="project-code">DEPENDENCY-TRACK / 7323</span></div>
+            <h3>Authenticated webhook bytes</h3>
+            <p>Added optional HMAC-SHA256 authentication over the exact bytes transmitted to webhook consumers.</p>
+            <div class="project-tags"><span>Java</span><span>HMAC</span><span>Webhooks</span></div>
+            <a href="https://github.com/DependencyTrack/dependency-track/pull/7323" target="_blank" rel="noopener noreferrer">View merged patch <span aria-hidden="true">-&gt;</span></a>
+          </article>
+
+          <article class="project-card reveal" data-category="identity">
+            <div class="project-top"><span class="project-status merged">Merged</span><span class="project-code">AETHER / 3423</span></div>
+            <h3>Certificate path and issuer validity</h3>
+            <p>Enforced path-length and issuer-validity constraints in certificate-chain verification.</p>
+            <div class="project-tags"><span>C</span><span>X.509</span><span>Path validation</span></div>
+            <a href="https://github.com/aether-lang-dev/aether/pull/3423" target="_blank" rel="noopener noreferrer">View merged patch <span aria-hidden="true">-&gt;</span></a>
+          </article>
+
+          <article class="project-card reveal" data-category="runtime">
+            <div class="project-top"><span class="project-status review">In review</span><span class="project-code">KATA / 13933</span></div>
+            <h3>Environment byte preservation</h3>
+            <p>Returns the exact validated key and value slices so guest policy does not mutate approved bytes.</p>
+            <div class="project-tags"><span>Rust</span><span>Guest policy</span><span>Byte semantics</span></div>
+            <a href="https://github.com/kata-containers/kata-containers/pull/13933" target="_blank" rel="noopener noreferrer">Inspect review <span aria-hidden="true">-&gt;</span></a>
+          </article>
+
+          <article class="project-card reveal" data-category="protocol">
+            <div class="project-top"><span class="project-status review">In review</span><span class="project-code">CORAZA / 1770</span></div>
+            <h3>Non-file request-body accounting</h3>
+            <p>Tracks multipart form bytes separately from streamed files across reject and partial-processing paths.</p>
+            <div class="project-tags"><span>Go</span><span>SecLang</span><span>WAF</span></div>
+            <a href="https://github.com/corazawaf/coraza/pull/1770" target="_blank" rel="noopener noreferrer">Inspect review <span aria-hidden="true">-&gt;</span></a>
+          </article>
+
+          <article class="project-card reveal" data-category="protocol">
+            <div class="project-top"><span class="project-status review">In review</span><span class="project-code">SCAPY / 5191</span></div>
+            <h3>UDP checksum payload coverage</h3>
+            <p>Includes encapsulated payload padding in checksum length and pseudo-header accounting.</p>
+            <div class="project-tags"><span>Python</span><span>UDP</span><span>Checksums</span></div>
+            <a href="https://github.com/secdev/scapy/pull/5191" target="_blank" rel="noopener noreferrer">Inspect review <span aria-hidden="true">-&gt;</span></a>
+          </article>
+
+          <article class="project-card reveal" data-category="protocol">
+            <div class="project-top"><span class="project-status review">In review</span><span class="project-code">LIBCOAP / 2208</span></div>
+            <h3>Block1 coverage across SZX changes</h3>
+            <p>Preserves acknowledged byte coverage when block-size negotiation changes the transfer geometry.</p>
+            <div class="project-tags"><span>C</span><span>CoAP</span><span>State machine</span></div>
+            <a href="https://github.com/obgm/libcoap/pull/2208" target="_blank" rel="noopener noreferrer">Inspect review <span aria-hidden="true">-&gt;</span></a>
+          </article>
+
+          <article class="project-card reveal" data-category="protocol">
+            <div class="project-top"><span class="project-status review">In review</span><span class="project-code">NMAP / 3584</span></div>
+            <h3>SHA-384 TLS signature schemes</h3>
+            <p>Adds SHA-384 schemes to the default NSE TLS offer while preserving version and key-type constraints.</p>
+            <div class="project-tags"><span>Lua</span><span>TLS</span><span>NSE</span></div>
+            <a href="https://github.com/nmap/nmap/pull/3584" target="_blank" rel="noopener noreferrer">Inspect review <span aria-hidden="true">-&gt;</span></a>
+          </article>
+
+          <article class="project-card reveal" data-category="platform">
+            <div class="project-top"><span class="project-status review">In review</span><span class="project-code">RT-THREAD / 11935</span></div>
+            <h3>Bounded signalfd close lifecycle</h3>
+            <p>Validates descriptor bounds and detaches listener state safely before releasing the descriptor slot.</p>
+            <div class="project-tags"><span>C</span><span>RTOS</span><span>Descriptor lifecycle</span></div>
+            <a href="https://github.com/RT-Thread/rt-thread/pull/11935" target="_blank" rel="noopener noreferrer">Inspect review <span aria-hidden="true">-&gt;</span></a>
+          </article>
+
+          <article class="project-card reveal" data-category="runtime">
+            <div class="project-top"><span class="project-status review">In review</span><span class="project-code">AETHER / 3441</span></div>
+            <h3>Independent sandbox-policy intersection</h3>
+            <p>Requires in-process grant levels and preload grants to allow the same operation when both are active.</p>
+            <div class="project-tags"><span>C</span><span>Sandboxing</span><span>Policy composition</span></div>
+            <a href="https://github.com/aether-lang-dev/aether/pull/3441" target="_blank" rel="noopener noreferrer">Inspect review <span aria-hidden="true">-&gt;</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section id="labs" class="section labs-section" aria-labelledby="labs-title">
+        <div class="section-heading reveal">
+          <p class="section-index">03 / LAB NOTEBOOK</p>
+          <h2 id="labs-title">Reproducible environments, bounded claims.</h2>
+          <p>Project-owned fixtures and isolated systems turn architecture assumptions into evidence.</p>
+        </div>
+
+        <div class="lab-list">
+          <a class="lab-row reveal" href="https://github.com/adilalperenciftci/runtime-provenance-firewall" target="_blank" rel="noopener noreferrer">
+            <span class="lab-index">L-01</span>
+            <span class="lab-main"><strong>Runtime Provenance Firewall</strong><small>cgroup evidence + artifact digests + SLSA/in-toto statements</small></span>
+            <span class="lab-stack">Go / eBPF</span><span class="lab-arrow" aria-hidden="true">-&gt;</span>
+          </a>
+          <a class="lab-row reveal" href="https://github.com/adilalperenciftci/enterprise-purple-range" target="_blank" rel="noopener noreferrer">
+            <span class="lab-index">L-02</span>
+            <span class="lab-main"><strong>Enterprise Purple Range</strong><small>Windows identity, endpoint, and network evidence correlation</small></span>
+            <span class="lab-stack">Python / Windows</span><span class="lab-arrow" aria-hidden="true">-&gt;</span>
+          </a>
+          <a class="lab-row reveal" href="https://github.com/adilalperenciftci/adversary-validation-range" target="_blank" rel="noopener noreferrer">
+            <span class="lab-index">L-03</span>
+            <span class="lab-main"><strong>Adversary Validation Range</strong><small>controlled validation actions with benign baselines and detection assertions</small></span>
+            <span class="lab-stack">Python / Sigma</span><span class="lab-arrow" aria-hidden="true">-&gt;</span>
+          </a>
+          <a class="lab-row reveal" href="https://github.com/adilalperenciftci/cps-adversary-emulation-harness" target="_blank" rel="noopener noreferrer">
+            <span class="lab-index">L-04</span>
+            <span class="lab-main"><strong>CPS Process-Integrity Harness</strong><small>deterministic synthetic process experiments without physical-controller interaction</small></span>
+            <span class="lab-stack">Python / OT</span><span class="lab-arrow" aria-hidden="true">-&gt;</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="identity" class="section identity-section" aria-labelledby="identity-title">
+        <div class="identity-copy reveal">
+          <p class="section-index">04 / ENGINEERING IDENTITY</p>
+          <h2 id="identity-title">Independent, evidence-led, upstream-first.</h2>
+          <p>
+            I am an independent systems security engineer based in Turkey. My work favors narrow patches, explicit ownership rules, and regression tests that preserve the boundary where the original failure occurred.
+          </p>
+          <p>
+            Research statements are scoped to project-owned fixtures, disposable lab systems, or upstream test suites. Platform limitations are recorded instead of being silently generalized.
+          </p>
+        </div>
+
+        <aside class="identity-card reveal" aria-label="Cryptographic identity status">
+          <div class="identity-card-head"><span class="key-shape" aria-hidden="true"></span><p>OPENPGP STATUS</p></div>
+          <strong>NO PUBLIC KEY PUBLISHED</strong>
+          <p>This GitHub account currently exposes no OpenPGP key. Do not trust a third-party key as mine without an independently verified fingerprint.</p>
+          <div class="identity-line"><span>Canonical account</span><a href="https://github.com/adilalperenciftci" target="_blank" rel="noopener noreferrer">github.com/adilalperenciftci</a></div>
+          <div class="identity-line"><span>Commit policy</span><b>DCO sign-off</b></div>
+        </aside>
+      </section>
+
+      <section id="contact" class="contact-section" aria-labelledby="contact-title">
+        <p class="section-index">05 / CONTACT</p>
+        <h2 id="contact-title">Bring a concrete boundary.</h2>
+        <p>For project-specific engineering correspondence, start from the relevant issue or patch. For general contact, use the canonical GitHub account.</p>
+        <a class="button button-primary" href="https://github.com/adilalperenciftci" target="_blank" rel="noopener noreferrer">Open GitHub profile <span aria-hidden="true">-&gt;</span></a>
+      </section>
+    </main>
+
+    <footer>
+      <p><span class="footer-mark">AC</span> Systems security and upstream engineering.</p>
+      <p>Built as a dependency-free static site. <span id="current-year">2026</span></p>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

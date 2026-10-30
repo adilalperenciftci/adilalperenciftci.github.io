@@ -1,0 +1,16 @@
+{
+  "name": "Adil Alperen Ciftci - Systems Security Engineer",
+  "short_name": "AAC Security",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070a10",
+  "theme_color": "#070a10",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
