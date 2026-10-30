@@ -26,6 +26,12 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
+    <div class="scroll-progress-track" aria-hidden="true">
+      <span id="scroll-progress"></span>
+    </div>
+    <canvas id="topology-canvas" class="topology-canvas" aria-hidden="true"></canvas>
+    <div class="noise-layer" aria-hidden="true"></div>
+
     <div class="ambient ambient-one" aria-hidden="true"></div>
     <div class="ambient ambient-two" aria-hidden="true"></div>
 
@@ -38,10 +44,10 @@
         </span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#research">Research</a>
-        <a href="#upstream">Upstream</a>
-        <a href="#labs">Labs</a>
-        <a href="#identity">Identity</a>
+        <a href="#research" data-section-link>Research</a>
+        <a href="#upstream" data-section-link>Upstream</a>
+        <a href="#labs" data-section-link>Labs</a>
+        <a href="#identity" data-section-link>Identity</a>
       </nav>
       <a class="header-contact" href="#contact">Contact <span aria-hidden="true">-&gt;</span></a>
     </header>
@@ -50,7 +56,7 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
           <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> Independent systems security engineering</p>
-          <h1 id="hero-title">Trust boundaries that survive contact with production.</h1>
+          <h1 id="hero-title">Trust boundaries that <span class="hero-accent">survive contact</span> with production.</h1>
           <p class="hero-lede">
             I work across kernel telemetry, workload identity, protocol state machines, and open-source control planes. The goal is simple: make every security-relevant transition explicit, bounded, and testable.
           </p>
@@ -63,9 +69,13 @@
             <li><span>02</span> Preserve protocol invariants</li>
             <li><span>03</span> Verify the failure boundary</li>
           </ul>
+          <a class="scroll-cue" href="#research">
+            <span aria-hidden="true"></span>
+            Trace the evidence
+          </a>
         </div>
 
-        <aside class="hero-console" aria-label="Current engineering scope">
+        <aside class="hero-console" data-depth-card aria-label="Current engineering scope">
           <div class="console-bar">
             <span></span><span></span><span></span>
             <p>boundary-report.sh</p>
@@ -78,8 +88,9 @@
               <div><dt>protocols</dt><dd>WAF / CoAP / TLS / DNS</dd></div>
               <div><dt>method</dt><dd>before-fail -&gt; after-pass</dd></div>
             </dl>
-            <p class="console-ok">[verified] evidence chain complete</p>
+            <p class="console-ok">[verified] evidence chain complete<span class="console-cursor" aria-hidden="true"></span></p>
           </div>
+          <div class="console-sweep" aria-hidden="true"></div>
           <div class="boundary-diagram" aria-hidden="true">
             <div class="diagram-node node-source">event</div>
             <div class="diagram-line line-one"></div>
@@ -91,6 +102,14 @@
           </div>
         </aside>
       </section>
+
+      <div class="telemetry-rail" role="group" aria-label="Current delivery properties">
+        <p><span class="telemetry-pulse" aria-hidden="true"></span> SYSTEM TRACE</p>
+        <div class="telemetry-flow" aria-hidden="true">
+          <span>kernel boundary</span><i></i><span>identity proof</span><i></i><span>protocol state</span><i></i><span>regression evidence</span>
+        </div>
+        <strong>STATIC / HTTPS</strong>
+      </div>
 
       <section class="signal-strip" aria-label="Selected engineering signals">
         <div><strong>8</strong><span>verified upstream merges highlighted</span></div>
@@ -107,28 +126,28 @@
         </div>
 
         <div class="research-grid">
-          <article class="research-card reveal">
+          <article class="research-card reveal" data-depth-card>
             <div class="card-number">R-01</div>
             <div class="card-icon" aria-hidden="true">{ }</div>
             <h3>Runtime security</h3>
             <p>Confinement, capability reduction, descriptor ownership, and deterministic cleanup across process and hypervisor boundaries.</p>
             <ul><li>Kata Containers</li><li>Capsicum</li><li>Linux namespaces</li></ul>
           </article>
-          <article class="research-card reveal">
+          <article class="research-card reveal" data-depth-card>
             <div class="card-number">R-02</div>
             <div class="card-icon" aria-hidden="true">&lt;/&gt;</div>
             <h3>eBPF telemetry</h3>
             <p>cgroup-scoped execution evidence, datapath state machines, conntrack contracts, and evidence-loss handling.</p>
             <ul><li>Cilium</li><li>Falco</li><li>Kernel observability</li></ul>
           </article>
-          <article class="research-card reveal">
+          <article class="research-card reveal" data-depth-card>
             <div class="card-number">R-03</div>
             <div class="card-icon" aria-hidden="true">[::]</div>
             <h3>Hypervisor confinement</h3>
             <p>Guest-host interfaces, workload byte preservation, lifecycle ordering, and bounded execution surfaces.</p>
             <ul><li>MicroVM runtimes</li><li>Guest policy</li><li>Resource isolation</li></ul>
           </article>
-          <article class="research-card reveal">
+          <article class="research-card reveal" data-depth-card>
             <div class="card-number">R-04</div>
             <div class="card-icon" aria-hidden="true">0x</div>
             <h3>Cryptographic protocols</h3>
@@ -155,7 +174,7 @@
         </div>
 
         <div class="project-grid" id="project-grid">
-          <article class="project-card reveal" data-category="runtime">
+          <article class="project-card reveal" data-depth-card data-category="runtime">
             <div class="project-top"><span class="project-status merged">Merged</span><span class="project-code">CILIUM / 49130</span></div>
             <h3>GRPCRoute backend TLS policy</h3>
             <p>Extended Gateway API backend transport validation so GRPC routing follows the same authenticated upstream contract.</p>
@@ -163,7 +182,7 @@
             <a href="https://github.com/cilium/cilium/pull/49130" target="_blank" rel="noopener noreferrer">View merged patch <span aria-hidden="true">-&gt;</span></a>
           </article>
 
-          <article class="project-card reveal" data-category="runtime">
+          <article class="project-card reveal" data-depth-card data-category="runtime">
             <div class="project-top"><span class="project-status merged">Merged</span><span class="project-code">FALCO / 3112</span></div>
             <h3>Plugin extraction error propagation</h3>
             <p>Kept field-extraction failures visible across the libsinsp plugin boundary instead of collapsing the diagnostic state.</p>
@@ -171,7 +190,7 @@
             <a href="https://github.com/falcosecurity/libs/pull/3112" target="_blank" rel="noopener noreferrer">View merged patch <span aria-hidden="true">-&gt;</span></a>
           </article>
 
-          <article class="project-card reveal" data-category="identity">
+          <article class="project-card reveal" data-depth-card data-category="identity">
             <div class="project-top"><span class="project-status merged">Merged</span><span class="project-code">SPIRE / 7303</span></div>
             <h3>Upstream CA expiry contract</h3>
             <p>Bound CA rotation and issued SVID lifetimes to the verified upstream X.509 chain expiry.</p>
@@ -179,7 +198,7 @@
             <a href="https://github.com/spiffe/spire/pull/7303" target="_blank" rel="noopener noreferrer">View merged patch <span aria-hidden="true">-&gt;</span></a>
           </article>
 
-          <article class="project-card reveal" data-category="identity">
+          <article class="project-card reveal" data-depth-card data-category="identity">
             <div class="project-top"><span class="project-status merged">Merged</span><span class="project-code">IMPACKET / 2304</span></div>
             <h3>Bounded DNS compression traversal</h3>
             <p>Stopped compressed-name pointer cycles with explicit traversal bounds while preserving valid nested labels.</p>
@@ -187,7 +206,7 @@
             <a href="https://github.com/fortra/impacket/pull/2304" target="_blank" rel="noopener noreferrer">View merged patch <span aria-hidden="true">-&gt;</span></a>
           </article>
 
-          <article class="project-card reveal" data-category="platform">
+          <article class="project-card reveal" data-depth-card data-category="platform">
             <div class="project-top"><span class="project-status merged">Merged</span><span class="project-code">DEFECTDOJO / 15961</span></div>
             <h3>Product-member finding visibility</h3>
             <p>Aligned finding-group list visibility with product authorization, including groups without findings.</p>
@@ -195,7 +214,7 @@
             <a href="https://github.com/DefectDojo/django-DefectDojo/pull/15961" target="_blank" rel="noopener noreferrer">View merged patch <span aria-hidden="true">-&gt;</span></a>
           </article>
 
-          <article class="project-card reveal" data-category="platform">
+          <article class="project-card reveal" data-depth-card data-category="platform">
             <div class="project-top"><span class="project-status merged">Merged</span><span class="project-code">DEPENDENCY-TRACK / 7323</span></div>
             <h3>Authenticated webhook bytes</h3>
             <p>Added optional HMAC-SHA256 authentication over the exact bytes transmitted to webhook consumers.</p>
@@ -203,7 +222,7 @@
             <a href="https://github.com/DependencyTrack/dependency-track/pull/7323" target="_blank" rel="noopener noreferrer">View merged patch <span aria-hidden="true">-&gt;</span></a>
           </article>
 
-          <article class="project-card reveal" data-category="identity">
+          <article class="project-card reveal" data-depth-card data-category="identity">
             <div class="project-top"><span class="project-status merged">Merged</span><span class="project-code">AETHER / 3423</span></div>
             <h3>Certificate path and issuer validity</h3>
             <p>Enforced path-length and issuer-validity constraints in certificate-chain verification.</p>
@@ -211,7 +230,7 @@
             <a href="https://github.com/aether-lang-dev/aether/pull/3423" target="_blank" rel="noopener noreferrer">View merged patch <span aria-hidden="true">-&gt;</span></a>
           </article>
 
-          <article class="project-card reveal" data-category="runtime">
+          <article class="project-card reveal" data-depth-card data-category="runtime">
             <div class="project-top"><span class="project-status review">In review</span><span class="project-code">KATA / 13933</span></div>
             <h3>Environment byte preservation</h3>
             <p>Returns the exact validated key and value slices so guest policy does not mutate approved bytes.</p>
@@ -219,7 +238,7 @@
             <a href="https://github.com/kata-containers/kata-containers/pull/13933" target="_blank" rel="noopener noreferrer">Inspect review <span aria-hidden="true">-&gt;</span></a>
           </article>
 
-          <article class="project-card reveal" data-category="protocol">
+          <article class="project-card reveal" data-depth-card data-category="protocol">
             <div class="project-top"><span class="project-status review">In review</span><span class="project-code">CORAZA / 1770</span></div>
             <h3>Non-file request-body accounting</h3>
             <p>Tracks multipart form bytes separately from streamed files across reject and partial-processing paths.</p>
@@ -227,7 +246,7 @@
             <a href="https://github.com/corazawaf/coraza/pull/1770" target="_blank" rel="noopener noreferrer">Inspect review <span aria-hidden="true">-&gt;</span></a>
           </article>
 
-          <article class="project-card reveal" data-category="protocol">
+          <article class="project-card reveal" data-depth-card data-category="protocol">
             <div class="project-top"><span class="project-status review">In review</span><span class="project-code">SCAPY / 5191</span></div>
             <h3>UDP checksum payload coverage</h3>
             <p>Includes encapsulated payload padding in checksum length and pseudo-header accounting.</p>
@@ -235,7 +254,7 @@
             <a href="https://github.com/secdev/scapy/pull/5191" target="_blank" rel="noopener noreferrer">Inspect review <span aria-hidden="true">-&gt;</span></a>
           </article>
 
-          <article class="project-card reveal" data-category="protocol">
+          <article class="project-card reveal" data-depth-card data-category="protocol">
             <div class="project-top"><span class="project-status review">In review</span><span class="project-code">LIBCOAP / 2208</span></div>
             <h3>Block1 coverage across SZX changes</h3>
             <p>Preserves acknowledged byte coverage when block-size negotiation changes the transfer geometry.</p>
@@ -243,7 +262,7 @@
             <a href="https://github.com/obgm/libcoap/pull/2208" target="_blank" rel="noopener noreferrer">Inspect review <span aria-hidden="true">-&gt;</span></a>
           </article>
 
-          <article class="project-card reveal" data-category="protocol">
+          <article class="project-card reveal" data-depth-card data-category="protocol">
             <div class="project-top"><span class="project-status review">In review</span><span class="project-code">NMAP / 3584</span></div>
             <h3>SHA-384 TLS signature schemes</h3>
             <p>Adds SHA-384 schemes to the default NSE TLS offer while preserving version and key-type constraints.</p>
@@ -251,7 +270,7 @@
             <a href="https://github.com/nmap/nmap/pull/3584" target="_blank" rel="noopener noreferrer">Inspect review <span aria-hidden="true">-&gt;</span></a>
           </article>
 
-          <article class="project-card reveal" data-category="platform">
+          <article class="project-card reveal" data-depth-card data-category="platform">
             <div class="project-top"><span class="project-status review">In review</span><span class="project-code">RT-THREAD / 11935</span></div>
             <h3>Bounded signalfd close lifecycle</h3>
             <p>Validates descriptor bounds and detaches listener state safely before releasing the descriptor slot.</p>
@@ -259,7 +278,7 @@
             <a href="https://github.com/RT-Thread/rt-thread/pull/11935" target="_blank" rel="noopener noreferrer">Inspect review <span aria-hidden="true">-&gt;</span></a>
           </article>
 
-          <article class="project-card reveal" data-category="runtime">
+          <article class="project-card reveal" data-depth-card data-category="runtime">
             <div class="project-top"><span class="project-status review">In review</span><span class="project-code">AETHER / 3441</span></div>
             <h3>Independent sandbox-policy intersection</h3>
             <p>Requires in-process grant levels and preload grants to allow the same operation when both are active.</p>
@@ -312,7 +331,7 @@
           </p>
         </div>
 
-        <aside class="identity-card reveal" aria-label="Cryptographic identity status">
+        <aside class="identity-card reveal" data-depth-card aria-label="Cryptographic identity status">
           <div class="identity-card-head"><span class="key-shape" aria-hidden="true"></span><p>OPENPGP STATUS</p></div>
           <strong>NO PUBLIC KEY PUBLISHED</strong>
           <p>This GitHub account currently exposes no OpenPGP key. Do not trust a third-party key as mine without an independently verified fingerprint.</p>
@@ -321,7 +340,7 @@
         </aside>
       </section>
 
-      <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <section id="contact" class="contact-section" data-depth-card aria-labelledby="contact-title">
         <p class="section-index">05 / CONTACT</p>
         <h2 id="contact-title">Bring a concrete boundary.</h2>
         <p>For project-specific engineering correspondence, start from the relevant issue or patch. For general contact, use the canonical GitHub account.</p>
@@ -334,6 +353,6 @@
       <p>Built as a dependency-free static site. <span id="current-year">2026</span></p>
     </footer>
 
-    <script src="app.js" defer></script>
+    <script src="app.js" type="module"></script>
   </body>
 </html>
